@@ -1,4 +1,4 @@
-package com.mnk.villagery;
+package com.msnk.villagery;
 
 import java.util.Optional;
 
@@ -20,8 +20,8 @@ import software.bernie.geckolib.GeckoLib;
 public class Villagery {
 	public static final String MODNAME = "Villagery";
     public static final String MODID = "villagery";
+    public static ArtifactVersion VERSION = null;
     public static Villagery INSTANCE;
-	public static ArtifactVersion VERSION = null;
     private static final Logger LOGGER = LogUtils.getLogger();
     
     public Villagery() {

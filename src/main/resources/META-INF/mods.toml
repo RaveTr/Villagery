@@ -7,7 +7,7 @@ license="All rights reserved"
 modId="villagery"
 version="${file.jarVersion}"
 displayName="Villagery"
-#updateJSONURL="https://raw.githubusercontent.com/RaveTr/Villagery/forge-1.19.3/updates.json" 
+updateJSONURL="https://raw.githubusercontent.com/RaveTr/Villagery/forge-1.19.3/updates.json" 
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" 
 logoFile="examplemod.png" 
 credits="MnK"
@@ -38,6 +38,13 @@ Overhauls villages and adds new village-related content to the game, breathing m
     versionRange="[4.0.2,)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="smartbrainlib" 
+    mandatory=true 
+    versionRange="[1.7.3,)"
+    ordering="NONE"
+    side="SERVER"
 
 [[dependencies.villagery]] 
     modId="jei" 
