@@ -1,0 +1,10 @@
+{
+	"homepage": "",
+	"promos": {
+		"1.19.3-latest": "1.0",
+		"1.19.3-recommended": "1.0"
+	},
+	"1.19.3": {
+		"1.0": "Initial mod release"
+	}
+}

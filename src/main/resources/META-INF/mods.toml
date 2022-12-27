@@ -1,0 +1,96 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="All rights reserved"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+
+[[mods]]
+modId="villagery"
+version="${file.jarVersion}"
+displayName="Villagery"
+#updateJSONURL="https://raw.githubusercontent.com/RaveTr/Villagery/forge-1.19.3/updates.json" 
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" 
+logoFile="examplemod.png" 
+credits="MnK"
+authors="Meme Man, Donkoki"
+displayTest="MATCH_VERSION"
+
+description='''
+Overhauls villages and adds new village-related content to the game, breathing more life into the villager universe.
+'''
+
+[[dependencies.villagery]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="geckolib4" 
+    mandatory=true 
+    versionRange="[4.0.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="jei" 
+    mandatory=false
+    versionRange="[11.5.0.297,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="jeresources" 
+    mandatory=false
+    versionRange="[1.2.0.188,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="jeed" 
+    mandatory=false
+    versionRange="[1.17b,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="configured" 
+    mandatory=false
+    versionRange="[2.0.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="catalogue" 
+    mandatory=false
+    versionRange="[1.7.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="jade" 
+    mandatory=false
+    versionRange="[9.2.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="theoneprobe" 
+    mandatory=false
+    versionRange="[7.0.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="appleskin" 
+    mandatory=false
+    versionRange="[2.4.2,)"
+    ordering="NONE"
+    side="BOTH"
