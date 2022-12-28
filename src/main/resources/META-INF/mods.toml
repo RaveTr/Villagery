@@ -1,22 +1,20 @@
 modLoader="javafml"
 loaderVersion="[44,)"
-license="All rights reserved"
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+license="All Rights Reserved."
+issueTrackerURL="https://github.com/RaveTr/Villagery/issues"
 
 [[mods]]
 modId="villagery"
 version="${file.jarVersion}"
 displayName="Villagery"
 updateJSONURL="https://raw.githubusercontent.com/RaveTr/Villagery/forge-1.19.3/updates.json" 
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" 
+#displayURL="" 
 logoFile="examplemod.png" 
 credits="MnK"
 authors="Meme Man, Donkoki"
 displayTest="MATCH_VERSION"
-
-description='''
-Overhauls villages and adds new village-related content to the game, breathing more life into the villager universe.
-'''
+#configBackground="villagery:textures/"
+description='''Overhauls villages and adds new village-related content to the game, breathing more life into the villager universe.'''
 
 [[dependencies.villagery]] 
     modId="forge" 
@@ -33,7 +31,7 @@ Overhauls villages and adds new village-related content to the game, breathing m
     side="BOTH"
 
 [[dependencies.villagery]] 
-    modId="geckolib4" 
+    modId="geckolib" 
     mandatory=true 
     versionRange="[4.0.2,)"
     ordering="NONE"
@@ -47,23 +45,30 @@ Overhauls villages and adds new village-related content to the game, breathing m
     side="SERVER"
 
 [[dependencies.villagery]] 
-    modId="jei" 
+    modId="roughlyenoughitems" 
     mandatory=false
-    versionRange="[11.5.0.297,)"
+    versionRange="[10.0.581,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.villagery]] 
-    modId="jeresources" 
+    modId="roughlyenoughresources" 
     mandatory=false
-    versionRange="[1.2.0.188,)"
+    versionRange="[2.5.2,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.villagery]] 
-    modId="jeed" 
+    modId="clothconfig" 
     mandatory=false
-    versionRange="[1.17b,)"
+    versionRange="[9.0.94,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="architectury" 
+    mandatory=false
+    versionRange="[7.0.66,)"
     ordering="AFTER"
     side="BOTH"
 
@@ -91,7 +96,7 @@ Overhauls villages and adds new village-related content to the game, breathing m
 [[dependencies.villagery]] 
     modId="theoneprobe" 
     mandatory=false
-    versionRange="[7.0.0,)"
+    versionRange="[1.19.3-7.0.0,)"
     ordering="NONE"
     side="BOTH"
 
