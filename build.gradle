@@ -106,10 +106,6 @@ mixin {
 }
 
 repositories {
-	maven {
-		name = "Progwml6 Maven"
-		url = "https://dvs1.progwml6.com/files/maven/"
-	}
 	maven { 
 	    name = "Shedaniel Maven"
 	    url "https://maven.shedaniel.me/" 
@@ -134,11 +130,11 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mcVersion}-${fmlVersion}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
-    implementation  fg.deobf("software.bernie.geckolib:geckolib-forge-${mcVersion}:${geckolib}")
+//    implementation  fg.deobf("software.bernie.geckolib:geckolib-forge-${mcVersion}:${geckolib}")
     implementation  fg.deobf("curse.maven:smartbrainlib-661293:${sbl}-sources-${sblSource}")
     
     implementation  fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei}")
-    implementation  fg.deobf("curse.maven:roughly-enough-resources-325625:${rer}")
+//    implementation  fg.deobf("curse.maven:roughly-enough-resources-325625:${rer}")
     
     implementation  fg.deobf("me.shedaniel.cloth:cloth-config-forge:${clothConfig}")
     implementation  fg.deobf("dev.architectury:architectury-forge:${architectury}")
@@ -156,11 +152,11 @@ jar {
     manifest {
         attributes([
                 "Specification-Title"     : project.modName,
-                "Specification-Vendor"    : "MSnK", // Meme Man, Snakemaster n Donkoki
+                "Specification-Vendor"    : "MnK", // Meme Man Donkoki
                 "Specification-Version"   : "1", 
                 "Implementation-Title"    : "${modName}",
                 "Implementation-Version"  : project.modVersion,
-                "Implementation-Vendor"   : "MSnK",
+                "Implementation-Vendor"   : "MnK",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs": "villagery.mixins.json"
         ])

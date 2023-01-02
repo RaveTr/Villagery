@@ -31,13 +31,6 @@ description='''Overhauls villages and adds new village-related content to the ga
     side="BOTH"
 
 [[dependencies.villagery]] 
-    modId="geckolib" 
-    mandatory=true 
-    versionRange="[4.0.2,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.villagery]] 
     modId="smartbrainlib" 
     mandatory=true 
     versionRange="[1.7.3,)"

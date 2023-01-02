@@ -1,4 +1,4 @@
-package com.msnk.villagery;
+package com.mnk.villagery;
 
 import java.util.Optional;
 
@@ -15,7 +15,6 @@ import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forgespi.language.IModInfo;
-import software.bernie.geckolib.GeckoLib;
 
 @Mod(Villagery.MODID)
 public class Villagery {
@@ -26,7 +25,6 @@ public class Villagery {
     private static final Logger LOGGER = LogUtils.getLogger();
     
     public Villagery() {
-    	GeckoLib.initialize();
     	INSTANCE = this;
     	
 		Optional<? extends ModContainer> villageryMod = ModList.get().getModContainerById(MODID);

@@ -1,6 +1,6 @@
 package com.msnk.villagery.common.network;
 
-import com.msnk.villagery.Villagery;
+import com.mnk.villagery.Villagery;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
