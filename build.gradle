@@ -149,7 +149,7 @@ dependencies {
     
     implementation  fg.deobf("me.shedaniel.cloth:cloth-config-forge:${clothConfig}")
     implementation  fg.deobf("dev.architectury:architectury-forge:${architectury}")
-//    implementation  fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${playerAnimator}")
+//  implementation  fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${playerAnimator}")
 
     implementation  fg.deobf("curse.maven:appleskin-248787:${appleskin}")
 
