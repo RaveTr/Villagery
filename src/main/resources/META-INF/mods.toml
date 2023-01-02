@@ -45,13 +45,6 @@ description='''Overhauls villages and adds new village-related content to the ga
     side="BOTH"
 
 [[dependencies.villagery]] 
-    modId="roughlyenoughresources" 
-    mandatory=false
-    versionRange="[2.5.2,)"
-    ordering="AFTER"
-    side="BOTH"
-
-[[dependencies.villagery]] 
     modId="clothconfig" 
     mandatory=false
     versionRange="[9.0.94,)"
@@ -62,6 +55,13 @@ description='''Overhauls villages and adds new village-related content to the ga
     modId="architectury" 
     mandatory=false
     versionRange="[7.0.66,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="playeranimator" 
+    mandatory=false
+    versionRange="[0.4.1,)"
     ordering="AFTER"
     side="BOTH"
 
@@ -97,5 +97,19 @@ description='''Overhauls villages and adds new village-related content to the ga
     modId="appleskin" 
     mandatory=false
     versionRange="[2.4.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="bettercombat" 
+    mandatory=false
+    versionRange="[1.5.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagery]] 
+    modId="combatroll" 
+    mandatory=false
+    versionRange="[1.1.1,)"
     ordering="NONE"
     side="BOTH"
