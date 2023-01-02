@@ -1,7 +1,13 @@
 package com.msnk.villagery.common.items.tiers;
 
-public enum VillageryItemTiers {
+public class VillageryItemTiers {
 	
+	public enum VillageryToolSetTiers {
+		
+	}
 	
+	public enum VillageryArmorSetTiers {
+		
+	}
 
 }

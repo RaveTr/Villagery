@@ -6,8 +6,7 @@ import org.apache.maven.artifact.versioning.ArtifactVersion;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.msnk.villagery.manager.VillageryEventsManager;
-import com.msnk.villagery.manager.VillageryRegistryManager;
+import com.msnk.villagery.manager.VillageryModManager;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,8 +34,7 @@ public class Villagery {
 			LOGGER.warn("Couldn't get mod version from mod info..");
 		}
 		
-		VillageryEventsManager.registerEvents();
-		VillageryRegistryManager.registerRegistries();
+		VillageryModManager.registerAll();
 		
 		IEventBus forgeBus =  MinecraftForge.EVENT_BUS;
         forgeBus.register(this);
