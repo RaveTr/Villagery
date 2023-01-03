@@ -1,22 +1,19 @@
 package com.msnk.villagery.manager;
 
+import com.mnk.villagery.Villagery;
 import com.msnk.villagery.common.events.VillagerySetupEvent;
+import com.msnk.villagery.common.registry.VillageryCreativeTabs;
 
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public class VillageryEventsManager {
 	
-	public static void registerEvents() {
-		IEventBus modBus =  FMLJavaModLoadingContext.get().getModEventBus();
-		IEventBus forgeBus =  MinecraftForge.EVENT_BUS;
-		
-		registerClientEvents(modBus, forgeBus);
-		registerCommonEvents(modBus, forgeBus);
-		registerServerEvents(modBus, forgeBus);
+	public static void registerEvents() {		
+		registerClientEvents(Villagery.MOD_BUS, Villagery.FORGE_BUS);
+		registerCommonEvents(Villagery.MOD_BUS, Villagery.FORGE_BUS);
+		registerServerEvents(Villagery.MOD_BUS, Villagery.FORGE_BUS);
 	}
 	
 	private static void registerClientEvents(IEventBus modBus, IEventBus forgeBus) {
@@ -27,6 +24,8 @@ public class VillageryEventsManager {
 	
 	private static void registerCommonEvents(IEventBus modBus, IEventBus forgeBus) {
 		modBus.addListener(VillagerySetupEvent::onFMLCommonSetup);
+		modBus.addListener(VillageryCreativeTabs::registerTabs);
+		modBus.addListener(VillageryCreativeTabs::registerTabContents);
 	}
 	
 	private static void registerServerEvents(IEventBus modBus, IEventBus forgeBus) {

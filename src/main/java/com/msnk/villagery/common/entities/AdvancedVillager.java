@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 
-public class AdvancedVillager extends Villager implements SmartBrainOwner<AdvancedVillager>{
+public class AdvancedVillager extends Villager implements SmartBrainOwner<AdvancedVillager> {
 
 	public AdvancedVillager(EntityType<? extends Villager> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);

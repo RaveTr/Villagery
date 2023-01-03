@@ -8,11 +8,13 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import com.msnk.villagery.manager.VillageryModManager;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forgespi.language.IModInfo;
 
 @Mod(Villagery.MODID)
@@ -22,6 +24,8 @@ public class Villagery {
     public static ArtifactVersion VERSION = null;
     public static Villagery INSTANCE;
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static final IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+    public static final IEventBus FORGE_BUS = MinecraftForge.EVENT_BUS;
     
     public Villagery() {
     	INSTANCE = this;
@@ -36,7 +40,10 @@ public class Villagery {
 		
 		VillageryModManager.registerAll();
 		
-		IEventBus forgeBus =  MinecraftForge.EVENT_BUS;
-        forgeBus.register(this);
+        FORGE_BUS.register(this);
+    }
+    
+    public static ResourceLocation prefix(String entry) {
+    	return new ResourceLocation(Villagery.MODID, entry);
     }
 }
