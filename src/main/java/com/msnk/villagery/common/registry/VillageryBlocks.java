@@ -17,12 +17,12 @@ public class VillageryBlocks {
 	
 	
 	
-	public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
-		return registerBlock(name, supplier, 64, true);
+	public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> blockSupplier) {
+		return registerBlock(name, blockSupplier, 64, true);
 	}
 	
-	public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier, int stackSize, boolean generateItem) {
-		RegistryObject<B> block = VILLAGERY_BLOCKS.register(name, supplier);
+	public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> blockSupplier, int stackSize, boolean generateItem) {
+		RegistryObject<B> block = VILLAGERY_BLOCKS.register(name, blockSupplier);
 		if (generateItem) VILLAGERY_BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(stackSize)));
 		return block;
 	}

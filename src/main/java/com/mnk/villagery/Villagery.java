@@ -46,4 +46,8 @@ public class Villagery {
     public static ResourceLocation prefix(String entry) {
     	return new ResourceLocation(Villagery.MODID, entry);
     }
+    
+    public static Logger getLogger() {
+    	return LOGGER;
+    }
 }

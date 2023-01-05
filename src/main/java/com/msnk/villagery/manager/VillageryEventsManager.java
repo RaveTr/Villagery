@@ -24,6 +24,7 @@ public class VillageryEventsManager {
 	
 	private static void registerCommonEvents(IEventBus modBus, IEventBus forgeBus) {
 		modBus.addListener(VillagerySetupEvent::onFMLCommonSetup);
+		modBus.addListener(VillagerySetupEvent::onDataGen);
 		modBus.addListener(VillageryCreativeTabs::registerTabs);
 		modBus.addListener(VillageryCreativeTabs::registerTabContents);
 	}
