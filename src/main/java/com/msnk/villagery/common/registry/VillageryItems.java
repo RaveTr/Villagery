@@ -16,6 +16,7 @@ public class VillageryItems {
 	public static final DeferredRegister<Item> VILLAGERY_GEAR = DeferredRegister.create(ForgeRegistries.ITEMS, Villagery.MODID);
 	
 	public static final RegistryObject<Item> TEST_ITEM = registerVillageryItem("test_item", () -> new Item(new Properties()));
+	public static final RegistryObject<Item> TEST_GEAR_ITEM = registerVillageryGearItem("test_gear_item", () -> new Item(new Properties()));
 	
 	public static <I extends Item> RegistryObject<I> registerItem(String name, Supplier<? extends I> itemSupplier, @Nonnull DeferredRegister<Item> registry) {
 		RegistryObject<I> itemEntry = registry.register(name, itemSupplier);

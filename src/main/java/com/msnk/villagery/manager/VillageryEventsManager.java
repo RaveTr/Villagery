@@ -1,6 +1,7 @@
 package com.msnk.villagery.manager;
 
 import com.mnk.villagery.Villagery;
+import com.msnk.villagery.common.events.VillageryMiscEvents;
 import com.msnk.villagery.common.events.VillagerySetupEvent;
 import com.msnk.villagery.common.registry.VillageryCreativeTabs;
 
@@ -27,6 +28,8 @@ public class VillageryEventsManager {
 		modBus.addListener(VillagerySetupEvent::onDataGen);
 		modBus.addListener(VillageryCreativeTabs::registerTabs);
 		modBus.addListener(VillageryCreativeTabs::registerTabContents);
+		forgeBus.addListener(VillageryMiscEvents::onWorldTick);
+		forgeBus.addListener(VillageryMiscEvents::onLivingHurt);
 	}
 	
 	private static void registerServerEvents(IEventBus modBus, IEventBus forgeBus) {

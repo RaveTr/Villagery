@@ -1,6 +1,7 @@
 package com.msnk.villagery.common.registry;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import com.mnk.villagery.Villagery;
@@ -20,6 +21,8 @@ public class VillageryCreativeTabs {
 	public static CreativeModeTab VILLAGERY_BLOCKS;
 	public static CreativeModeTab VILLAGERY_GEAR;
 	public static CreativeModeTab VILLAGERY_ITEMS;
+	// Allow for more versatility when registering an item to a tab
+	public static final HashMap<CreativeModeTab, Item> TAB_MAP = new HashMap<CreativeModeTab, Item>();
 	
 	public static void registerTabs(CreativeModeTabEvent.Register event) {
 		VILLAGERY_BLOCKS = registerTabInOrder(event, "villagery_blocks", Blocks.ACACIA_BUTTON.asItem(), VILLAGERY_BLOCKS, CreativeModeTabs.BUILDING_BLOCKS, getItemsFromRegistryToTab(VillageryBlocks.VILLAGERY_BLOCK_ITEMS.getEntries()));
@@ -30,7 +33,7 @@ public class VillageryCreativeTabs {
 	public static void registerTabContents(CreativeModeTabEvent.BuildContents event) {
 		if (event.getTab().equals(VILLAGERY_BLOCKS)) event.acceptAll(getItemsFromRegistryToTab(VillageryBlocks.VILLAGERY_BLOCK_ITEMS.getEntries()));
 		if (event.getTab().equals(VILLAGERY_GEAR)) event.acceptAll(getItemsFromRegistryToTab(VillageryItems.VILLAGERY_GEAR.getEntries()));
-		if (event.getTab().equals(VILLAGERY_ITEMS)) event.acceptAll(getItemsFromRegistryToTab(VillageryBlocks.VILLAGERY_BLOCK_ITEMS.getEntries()));
+		if (event.getTab().equals(VILLAGERY_ITEMS)) event.acceptAll(getItemsFromRegistryToTab(VillageryItems.VILLAGERY_ITEMS.getEntries()));
 	}
 	
 	private static CreativeModeTab registerTabInOrder(final CreativeModeTabEvent.Register event, String registryName, Item iconItem, CreativeModeTab regTab, CreativeModeTab followingTab, Collection<ItemStack> content) {

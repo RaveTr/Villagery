@@ -1,4 +1,6 @@
 {
+  "block.villagery.test_block": "Test Block",
+  "item.villagery.test_gear_item": "Test Gear Item",
   "item.villagery.test_item": "Test Item",
   "itemGroup.villagery.villagery_blocks": "Villagery Blocks",
   "itemGroup.villagery.villagery_gear": "Villagery Gear",
