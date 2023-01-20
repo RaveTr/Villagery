@@ -59,15 +59,11 @@ public class VillageryCreativeTabs {
 		return tComp;
 	}
 	
-	public static List<CreativeModeTab> getPresentTabs() {
-		List<CreativeModeTab> tabs = new ObjectArrayList<CreativeModeTab>();
+	public static ObjectArrayList<CreativeModeTab> getPresentTabs() {
+		ObjectArrayList<CreativeModeTab> tabs = new ObjectArrayList<CreativeModeTab>();
 		// Safety check
-		if (tabs.isEmpty()) {
-			tabs.add(VILLAGERY_BLOCKS);
-			tabs.add(VILLAGERY_GEAR);
-			tabs.add(VILLAGERY_ITEMS);
-			
-		}
+		if (tabs.isEmpty()) tabs.addAll(ObjectArrayList.of(VILLAGERY_BLOCKS, VILLAGERY_GEAR, VILLAGERY_ITEMS));
+		
 		return tabs;
 	}
 }
