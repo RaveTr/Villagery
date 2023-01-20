@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.apache.maven.artifact.versioning.ArtifactVersion;
 import org.slf4j.Logger;
 
+import com.mnk.villagery.manager.VillageryModManager;
 import com.mojang.logging.LogUtils;
-import com.msnk.villagery.manager.VillageryModManager;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,8 +24,8 @@ public class Villagery {
     public static ArtifactVersion VERSION = null;
     public static Villagery INSTANCE;
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
-    public static final IEventBus FORGE_BUS = MinecraftForge.EVENT_BUS;
+    public static IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+    public static IEventBus FORGE_BUS = MinecraftForge.EVENT_BUS;
     
     public Villagery() {
     	INSTANCE = this;
@@ -38,9 +38,8 @@ public class Villagery {
 			LOGGER.warn("Couldn't get mod version from mod info..");
 		}
 		
-		VillageryModManager.registerAll();
+		if (MOD_BUS != null && FORGE_BUS != null) VillageryModManager.registerAll();
 		
-        FORGE_BUS.register(this);
     }
     
     public static ResourceLocation prefix(String entry) {

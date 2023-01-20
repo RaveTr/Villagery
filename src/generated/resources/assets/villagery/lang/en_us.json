@@ -1,7 +1,5 @@
 {
-  "block.villagery.test_block": "Test Block",
-  "item.villagery.test_gear_item": "Test Gear Item",
-  "item.villagery.test_item": "Test Item",
+  "item.villagery.test_item_blah": "Test Item Blah",
   "itemGroup.villagery.villagery_blocks": "Villagery Blocks",
   "itemGroup.villagery.villagery_gear": "Villagery Gear",
   "itemGroup.villagery.villagery_items": "Villagery Items"
