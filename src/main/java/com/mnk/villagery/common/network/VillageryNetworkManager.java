@@ -13,6 +13,8 @@ public class VillageryNetworkManager {
 	
 	public static void register() {
 		int id = 0;
+		
+		
 	}
 
 }

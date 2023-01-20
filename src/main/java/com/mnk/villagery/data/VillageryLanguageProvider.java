@@ -5,6 +5,7 @@ import com.mnk.villagery.common.registry.VillageryBlocks;
 import com.mnk.villagery.common.registry.VillageryCreativeTabs;
 import com.mnk.villagery.common.registry.VillageryItems;
 
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -23,19 +24,34 @@ public class VillageryLanguageProvider extends LanguageProvider {
 		return super.getName();
 	}
 	
+	private static ObjectArrayList<String> getLowerCaseListedWords() {
+		ObjectArrayList<String> lcw = new ObjectArrayList<String>();
+		
+		lcw.addAll(ObjectArrayList.of("Of", "And"));
+		
+		return lcw;
+	}
+	
 	//https://stackoverflow.com/questions/1892765/how-to-capitalize-the-first-character-of-each-word-in-a-string
-	public static String capitalizeString(String string) {		 
-		char[] charSet = string.toLowerCase().toCharArray();		  
+	public static String formatString(String input) {
+		char[] charSet = input.toLowerCase().toCharArray();
 		boolean found = false;
-		for (int i = 0; i < charSet.length; i++) {		  
+		for (int i = 0; i < charSet.length - 1; i++) {
 			if (!found && Character.isLetter(charSet[i])) {
-				charSet[i] = Character.toUpperCase(charSet[i]);		     
-				found = true;		   
-			} else if (Character.isWhitespace(charSet[i]) || charSet[i] == '.' || charSet[i] == '_') {      
+				charSet[i] = Character.toUpperCase(charSet[i]);
+				found = true;
+			} else if (Character.isWhitespace(charSet[i]) || charSet[i] == '.' || charSet[i] == '_') {
 				found = false;
-			}		 
-		}		 
-		return String.valueOf(charSet);		
+			}
+		}
+		
+		String baseResult = String.valueOf(charSet);
+		
+		for (String lcw : getLowerCaseListedWords()) {
+			if (baseResult.contains(lcw)) baseResult = baseResult.replaceAll(lcw, lcw.toLowerCase());
+		}
+		
+		return baseResult;
 	}
 	
 	private void localizeGeneralRegistryNames(String registryName) {		
@@ -43,8 +59,8 @@ public class VillageryLanguageProvider extends LanguageProvider {
 		if (!registryName.contains(".")) return;
 		
 		String regNameTemp = registryName;
-		String capitalized = capitalizeString(regNameTemp);
-		String regName = capitalized.substring(capitalized.lastIndexOf(".") + 1).replaceAll("_", " ");
+		String formatted = formatString(regNameTemp);
+		String regName = formatted.substring(formatted.lastIndexOf(".") + 1).replaceAll("_", " ");
 		
 		add(registryName, regName);
 	}
@@ -89,10 +105,10 @@ public class VillageryLanguageProvider extends LanguageProvider {
 	}
 	
 	private void translateAll() {
-		translateItems();
 		translateBlocks();
-		translateEntities();
 		translateCreativeTabs();
+		translateEntities();
+		translateItems();
 	}
 
 	@Override
