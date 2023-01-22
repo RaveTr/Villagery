@@ -19,5 +19,8 @@ public class AdvancedVillager extends Villager implements SmartBrainOwner<Advanc
 		return null;
 	}
 	
-	
+	@Override
+	protected void registerGoals() {
+		super.registerGoals();
+	}
 }
