@@ -33,7 +33,7 @@ public class VillageryLanguageProvider extends LanguageProvider {
 	}
 	
 	//https://stackoverflow.com/questions/1892765/how-to-capitalize-the-first-character-of-each-word-in-a-string
-	public static String formatString(String input) {
+	private static String formatString(String input) {
 		char[] charSet = input.toLowerCase().toCharArray();
 		boolean found = false;
 		for (int i = 0; i < charSet.length - 1; i++) {
@@ -47,9 +47,7 @@ public class VillageryLanguageProvider extends LanguageProvider {
 		
 		String baseResult = String.valueOf(charSet);
 		
-		for (String lcw : getLowerCaseListedWords()) {
-			if (baseResult.contains(lcw)) baseResult = baseResult.replaceAll(lcw, lcw.toLowerCase());
-		}
+		for (String lcw : getLowerCaseListedWords()) if (baseResult.contains(lcw)) baseResult = baseResult.replaceAll(lcw, lcw.toLowerCase());
 		
 		return baseResult;
 	}
